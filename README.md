@@ -9,7 +9,7 @@
 
 This repository contains references to recipes for [electronic design automation (EDA)](https://en.wikipedia.org/wiki/Electronic_design_automation) tools/projects to be built on [Termux](https://termux.com/) (Android). The main purpose is coordination of contributions for eventually providing all tools/projects through some `apt` repository, and having them updated periodically.
 
-In [github.com/termux](https://github.com/termux), apart from [termux/termux-packages](https://github.com/termux/termux-packages) and [termux/unstable-packages](https://github.com/termux/unstable-packages), the are other package groups, such as [termux/game-packages](https://github.com/termux/game-packages). It might be interesting to handle this repo as *termux/eda-packages*.
+In [github.com/termux](https://github.com/termux), apart from [termux/termux-packages](https://github.com/termux/termux-packages) and [termux/unstable-packages](https://github.com/termux/unstable-packages), there are other package groups, such as [termux/game-packages](https://github.com/termux/game-packages). It might be interesting to handle this repo as *termux/eda-packages*.
 
 Unlike other repositories in the ecosystem, testing these recipes in Continuous Integration (CI) services is non-trivial, since running non-interactive Android containers/VMs is not straightforward. Should you be aware of any ready-to-use solution, please let us know!
 
