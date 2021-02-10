@@ -17,12 +17,11 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-cd $(dirname "$0")/..
+cd $(dirname "$0")
 
-curl -fsSL https://its-pointless.github.io/setup-pointless-repo.sh | bash -
-pkg install gnat-10 llvm clang make
-setupgcc-10
-setup-patchforgcc
+[ -d ghdl ] && git clone https://github.com/ghdl/ghdl || true
+
+cd ghdl
 
 mkdir -p build-termux
 cd build-termux

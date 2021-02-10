@@ -17,3 +17,5 @@ References:
 
 - [termux/termux-docker](https://github.com/termux/termux-docker)
 - [its-pointless/gcc_termux](https://github.com/its-pointless/gcc_termux)
+- [wiki.termux.com/wiki/Termux-usb](https://wiki.termux.com/wiki/Termux-usb)
+  - Failing libusb_init example ([termux/termux-app#1928](https://github.com/termux/termux-app/issues/1928))
