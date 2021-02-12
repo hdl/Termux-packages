@@ -19,7 +19,10 @@
 
 cd $(dirname "$0")
 
-[ ! -d yosys ] && git clone https://github.com/YosysHQ/yosys || true
+[ ! -d yosys ] && (
+  git clone https://github.com/YosysHQ/yosys
+  git clone github.com/ghdl/ghdl-yosys-plugin yosys/frontends/ghdl
+) || true
 
 cd yosys
 
@@ -27,4 +30,8 @@ CXX=clang++
 export CFLAGS="-DS_IWRITE=S_IWUSR -DS_IREAD=S_IRUSR"
 export LDFLAGS="-lstdc++ -landroid-glob -landroid-spawn"
 make config-clang
+
+echo "ENABLE_GHDL=1" >> Makefile.conf
+echo "GHDL_PREFIX=$PREFIX" >> Makefile.conf
+
 make -j4 install PREFIX="$PREFIX"
