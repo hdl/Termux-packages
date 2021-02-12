@@ -25,5 +25,6 @@ cd yosys
 
 CXX=clang++
 export CFLAGS="-DS_IWRITE=S_IWUSR -DS_IREAD=S_IRUSR"
+export LDFLAGS="-lstdc++ -landroid-glob -landroid-spawn"
 make config-clang
 make -j4 install PREFIX="$PREFIX"
