@@ -19,7 +19,7 @@
 
 cd $(dirname "$0")
 
-[ -d ghdl ] && git clone https://github.com/ghdl/ghdl || true
+[ ! -d ghdl ] && git clone https://github.com/ghdl/ghdl || true
 
 cd ghdl
 
