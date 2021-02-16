@@ -1,3 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
 # Authors:
 #   Unai Martinez-Corral
 #
@@ -17,11 +19,17 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+set -e
+
 cd $(dirname "$0")
 
-[ ! -d ghdl ] && git clone https://github.com/ghdl/ghdl || true
-
+mkdir -p ghdl
 cd ghdl
+
+if [ ! -d .git ]; then
+  git clone --depth=1 https://github.com/ghdl/ghdl ./
+  git fetch --unshallow
+fi
 
 mkdir -p build-termux
 cd build-termux
