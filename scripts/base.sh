@@ -26,7 +26,9 @@ pkg install \
   libandroid-spawn \
   libusb \
   llvm \
-  make
+  make \
+  tcl \
+  python
 
 curl -fsSL https://its-pointless.github.io/setup-pointless-repo.sh | bash -
 pkg install gnat-10
