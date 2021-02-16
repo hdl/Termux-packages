@@ -1,3 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
 # Authors:
 #   Unai Martinez-Corral
 #
@@ -17,12 +19,14 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+set -e
+
 cd $(dirname "$0")
 
-[ ! -d dfu-util ] && (
+if [ ! -d dfu-util ]; then
   mkdir -p dfu-util
   curl -fsSL "https://downloads.sourceforge.net/project/dfu-util/dfu-util-0.10.tar.gz" | tar xzf - --strip-components=1 -C dfu-util
-) || true
+fi
 
 cd dfu-util
 

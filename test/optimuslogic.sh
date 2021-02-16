@@ -3,7 +3,7 @@
 # Authors:
 #   Unai Martinez-Corral
 #
-# Copyright 2020-2021 The HDL org Authors.
+# Copyright 2021 The HDL org Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,24 +21,29 @@
 
 set -e
 
-cd $(dirname "$0")
+cd $(dirname "$0")/..
 
-pkg install -y \
-  bison \
-  clang \
-  flex \
-  git \
-  libandroid-spawn \
-  libusb \
-  llvm \
-  make \
-  tcl \
-  python
+echo '::group::Init'
+./init.sh
+echo '::endgroup::'
 
-curl -fsSL https://its-pointless.github.io/setup-pointless-repo.sh | bash -
+echo '::group::Update'
 pkg update
 yes | pkg upgrade
+echo '::endgroup::'
 
-pkg install -y gnat-10
-setupgcc-10
-setup-patchforgcc
+echo '::group::Install git'
+pkg install -y git
+echo '::endgroup::'
+
+echo '::group::Clone pygmy-dev'
+mkdir -p pygmy-dev
+cd pygmy-dev
+
+if [ ! -d .git ]; then
+  git clone --depth=1 https://github.com/optimuslogic/pygmy-dev ./
+  git fetch --unshallow
+fi
+echo '::endgroup::'
+
+sh tools/tools-setup.txt

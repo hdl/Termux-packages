@@ -49,10 +49,13 @@ Using USB devices from Termux is not straightforward due to permission constrain
 - [mik3y/usb-serial-for-android](https://github.com/mik3y/usb-serial-for-android)
 - [danpeig/Johnny-Five-Android-Termux](https://github.com/danpeig/Johnny-Five-Android-Termux)
 
-## Continuous Integration
+## Continuous Integration (CI)
 
-Unlike other repositories in the ecosystem, testing these recipes in Continuous Integration (CI) services is non-trivial, since running non-interactive Android containers/VMs is not straightforward. Should you be aware of any ready-to-use solution, please let us know!
+Unlike other repositories in the ecosystem, testing these recipes in Continuous Integration (CI) services is non-trivial, since running non-interactive Android containers/VMs on ARM is not straightforward.
 
-- [termux/termux-docker](https://github.com/termux/termux-docker)
-- [dbhi/qus](https://github.com/dbhi/qus)
+In the CI workflow of this repo, a container built in [termux/termux-docker](https://github.com/termux/termux-docker) is used together with [dbhi/qus](https://github.com/dbhi/qus). That allows running some scripts for testing purposes. However, it is quite limited. Currently, updating the Termux environment and installing dependencies does work, albeit with arbitray resolution issues. Furthermore, building GHDL produces compiler crashes or hangs, either with GCC or clang. Therefore, using CI for testing the codebase of this repo is a research area itself.
+
+Should you want to help getting CI to a usable state, or if you are aware of any ready-to-use solution, please let us know!
+
+- [termux/termux-docker#13](https://github.com/termux/termux-docker/issues/13)
 - [anbox.io](https://anbox.io)

@@ -1,3 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
 # Authors:
 #   Unai Martinez-Corral
 #
@@ -17,11 +19,16 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+set -e
+
 cd $(dirname "$0")
 
-[ ! -d yosys ] && git clone https://github.com/YosysHQ/yosys || true
-
+mkdir -p yosys
 cd yosys
+
+if [ ! -d .git ]; then
+  git clone https://github.com/YosysHQ/yosys ./
+fi
 
 CXX=clang++
 export CFLAGS="-DS_IWRITE=S_IWUSR -DS_IREAD=S_IRUSR"
