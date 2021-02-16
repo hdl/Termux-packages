@@ -11,6 +11,8 @@ This repository contains references to recipes for [electronic design automation
 
 ## Usage
 
+> ATTENTION: Latest releases of Termux are available through F-Droid. There are outdated versions available through Google Play, but using them is discouraged. See [termux/termux-app#1072@issuecomment-473965266](https://github.com/termux/termux-app/issues/1072#issuecomment-473965266).
+
 See [wiki.termux.com](https://wiki.termux.com) for general guidelines about getting started with Termux, such as how to setup [Touch Keyboard](https://wiki.termux.com/wiki/Touch_Keyboard)s. Power users will prefer plugging a USB/Bluetooth keyboard, which works off the shelf.
 
 Termux feels like a Debian environment with regard to installing/managing packages. However, a wrapper named `pkg` is provided for dealing with some details of Termux. As explained in [wiki.termux.com: Package Management > Using the package manager](https://wiki.termux.com/wiki/Package_Management), using `pkg` is recommended.
