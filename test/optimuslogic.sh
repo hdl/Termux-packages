@@ -41,9 +41,14 @@ mkdir -p pygmy-dev
 cd pygmy-dev
 
 if [ ! -d .git ]; then
-  git clone --depth=1 https://github.com/optimuslogic/pygmy-dev ./
+  git clone --depth=1 -b feat/sh https://github.com/umarcor/pygmy-dev ./
   git fetch --unshallow
 fi
 echo '::endgroup::'
 
-sh tools/tools-setup.txt
+echo '::group::update-static-dns'
+echo 'storage.googleapis.com' >> /system/etc/static-dns-hosts.txt
+update-static-dns
+echo '::endgroup::'
+
+sh tools/setup.sh
