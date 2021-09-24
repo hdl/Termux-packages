@@ -59,6 +59,7 @@ Should you want to help getting CI to a usable state, or if you are aware of any
 
 - [termux/termux-docker#13](https://github.com/termux/termux-docker/issues/13)
 - [anbox.io](https://anbox.io)
+- [waydro.id](https://waydro.id/)
 
 ## References
 
