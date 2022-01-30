@@ -65,3 +65,4 @@ Should you want to help getting CI to a usable state, or if you are aware of any
 
 - [optimuslogic/pygmy-dev](https://github.com/optimuslogic/pygmy-dev)
 - [optimuslogic/qorc-sdk](https://github.com/optimuslogic/qorc-sdk)
+- [mviereck/x11docker#224](https://github.com/mviereck/x11docker/issues/224)
